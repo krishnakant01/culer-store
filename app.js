@@ -30,6 +30,11 @@ function createSliderDots(){
         const dot = document.createElement("div");
         dot.classList.add("single-dot");
         imageSliderDots.appendChild(dot);
+
+        //To navigate to i-th slide by clicking on dot  (optional functionality)
+        dot.addEventListener("click",()=>{     
+            nextImage(i);
+        });
     }
 
     imageSliderDots.children[0].classList.add("active");
