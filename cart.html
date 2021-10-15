@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header >
+    <header>
 
         <nav class="navigation-container">
 
@@ -53,8 +53,103 @@
     <div class="sale-display">Sale! Get Upto 50% off!</div>
 
 
+    <div class="outer-div-container">
 
-    <script src="boots.js" type="module"></script>
+        <div class="my-cart-cards-container">
+
+            <h2 class="cards-container-heading">My Cart</h2>
+
+            <div class="my-cart-product-card">
+                <div class="my-cart-product-image-div">
+                    <img src="/images/adidas-x-19.1-sg.png" alt="">
+                </div>
+
+                <div class="my-cart-product-description-div">
+                    <p class="my-cart-product-name">Adidas X 19.1 SG</p>
+                    <h4 class="my-cart-product-price">Rs. 3999</h4>
+
+                    <label for="size">Size:</label>
+                    <select name="size" id="size">
+                        <option value="small">S</option>
+                        <option value="medium">M</option>
+                        <option value="large">L</option>
+                        <option value="x-large">XL</option>
+                    </select>
+
+                    <div class="quantity-btns">
+                        <button class="horizontal-card-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="horizontal-card-btn">-</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="expected-delivery">Expected Delivery: Wed, 22 Oct</h4>
+                    <span class="replace-info">10 days replacement policy</span>
+                </div>
+
+                <div class="product-card-btns-div">
+                    <button id="delete-btn"><span class="material-icons" >delete</span></button><br>
+                    <button id="move-to-wishlist-btn">MOVE TO WISHLIST</button>
+                </div>
+            </div>
+
+
+            <div class="my-cart-product-card">
+                <div class="my-cart-product-image-div">
+                    <img src="/images/adidas-x-19.1-sg.png" alt="">
+                </div>
+
+                <div class="my-cart-product-description-div">
+                    <p class="my-cart-product-name">Adidas X 19.1 SG</p>
+                    <h4 class="my-cart-product-price">Rs. 3999</h4>
+
+                    <label for="size">Size:</label>
+                    <select name="size" id="size">
+                        <option value="small">S</option>
+                        <option value="medium">M</option>
+                        <option value="large">L</option>
+                        <option value="x-large">XL</option>
+                    </select>
+                    <div class="quantity-btns">
+                        <button class="horizontal-card-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="horizontal-card-btn">-</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="expected-delivery">Expected Delivery: Wed, 22 Oct</h4>
+                    <span class="replace-info">10 days replacement policy</span>
+                </div>
+
+                <div class="product-card-btns-div">
+                    <button id="delete-btn"><span class="material-icons" >delete</span></button><br>
+                    <button id="move-to-wishlist-btn">MOVE TO WISHLIST</button>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+
+        <div class="bill-container">
+
+            <h2 class="cards-container-heading">Bill Amount</h2>
+
+            <p class="price-info">Price:</p>
+            <p class="discount-info">Discount:</p>
+            <p class="delivery-charges-info">Delivery Charges:</p>
+            <hr>
+            <p class="total">Total Amount:</p>
+            <hr>
+        </div>
+
+    </div>
+
+
+    <script src="cart.js" type="module"></script>
 </body>
 
 </html>
