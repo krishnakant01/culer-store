@@ -120,7 +120,7 @@ function displayCart() {
         deleteAndWishlist();
 
     } else {
-       emptyCartInitializer();
+        emptyCartInitializer();
     }
 
 }
@@ -194,7 +194,7 @@ function deleteAndWishlist() {
     for (let i = 0; i < deleteButton.length; i++) {
 
         deleteButton[i].addEventListener("click", () => {
-            
+
 
             let deletedItems = productsInCart[result[i].id].inCart;
             cartNumber -= deletedItems;
@@ -204,14 +204,14 @@ function deleteAndWishlist() {
 
             productsInCart[result[i].id].inCart = 0;
             delete productsInCart[result[i].id];
-            
+
             //saving locally
             localChanges();
 
             //setting cost
             setCartCost();
-            
-            if(cartNumber===0){
+
+            if (cartNumber === 0) {
                 localStorage.removeItem('numberOfCartItems');
                 localStorage.removeItem('productsInCart');
                 localStorage.removeItem('totalCartCost');
@@ -221,7 +221,8 @@ function deleteAndWishlist() {
 
     }
 }
-function emptyCartInitializer(){
+
+function emptyCartInitializer() {
     myCartProductCards.innerHTML = `
         
     <div class="empty-cart-div">
@@ -231,14 +232,16 @@ function emptyCartInitializer(){
     
     `
     buttonDiv.style.display = "none";
-    
+
 }
+
 function localChanges() {
     localStorage.setItem("numberOfCartItems", cartNumber);
     localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     localStorage.setItem("totalCartCost", totalCost);
 }
-function setCartCost(){
+
+function setCartCost() {
     var price = document.querySelector("#price-info");
     var discount = document.querySelector("#discount-info");
     var deliveryCharges = document.querySelector("#delivery-charges-info");
@@ -248,28 +251,28 @@ function setCartCost(){
     let pri = Number(totalCost);
     let disc = 0;
     let delivery = 0;
-    let fp =0;
-    
+    let fp = 0;
+
     discDisplay.style.display = "none";
     price.innerText = "₹ " + pri;
 
-    if(Number(totalCost)>30000){
-        disc = 0.1*pri;
-        discount.innerText ="- ₹ " + disc.toFixed(2);
+    if (Number(totalCost) > 30000) {
+        disc = 0.1 * pri;
+        discount.innerText = "- ₹ " + disc.toFixed(2);
         discDisplay.innerText = "10% Discount applied.";
         discDisplay.style.display = "block";
-    }else{
-        discount.innerText ="- ₹ "+ disc;
+    } else {
+        discount.innerText = "- ₹ " + disc;
     }
 
-    if(Number(totalCost>10000 && totalCost!=0)){
+    if (Number(totalCost > 10000 && totalCost != 0)) {
         deliveryCharges.innerText = "FREE";
         deliveryCharges.style.color = "green";
-    }else{
+    } else {
         delivery = 500;
-        deliveryCharges.innerText = "+ ₹ "+delivery;
+        deliveryCharges.innerText = "+ ₹ " + delivery;
     }
 
     fp = pri + delivery - disc.toFixed(2);
-    finalPrice.innerText = "₹ " + fp;    
+    finalPrice.innerText = "₹ " + fp;
 }

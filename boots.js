@@ -112,7 +112,7 @@ function storeWishlistProducts(product, text) {
             }
             wishlistItems[product.id].liked = true;
             text.innerText = "favorite";
-            text.style.color ="red";
+           // text.style.color ="red";
 
         } else {
             wishlistItems[product.id].liked = false;
@@ -135,9 +135,10 @@ function storeWishlistProducts(product, text) {
     localStorage.setItem('productsInWishlist', JSON.stringify(wishlistItems));
   
 }
-//wishlist button state (liked, not liked)
 
+//wishlist button state (liked, not liked)
 onReloadWishlistButtonState();
+
 function onReloadWishlistButtonState(){
     var text = document.querySelectorAll(".wishlist");
     let items = localStorage.getItem('productsInWishlist');
@@ -149,15 +150,13 @@ function onReloadWishlistButtonState(){
     
     for(let i=0; i<result.length; i++){
        
-       // console.log(result[i].id);
-
         if(items[result[i].id].liked == true){
             text[result[i].id].innerText = "favorite";
-            text[result[i].id].style.color = "red";
+           // text[result[i].id].style.color = "red";
         }
         else{
             text[result[i].id].innerText = "favorite_border";
-            text[result[i].id].style.color = "black";
+           // text[result[i].id].style.color = "black";
         }
     }
 

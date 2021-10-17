@@ -322,6 +322,9 @@ body {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+.wishlist-outer-div-container{
+    width: 60%;
+}
 .my-cart-cards-container{
     width: 100%;
     background-color:var(--color-light-blue) ;
