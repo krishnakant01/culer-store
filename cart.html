@@ -38,7 +38,7 @@
                 <a href="/">
                     <span class="material-icons">favorite</span>
                 </a>
-                <a href="/" class="cart">
+                <a href="cart.html" class="cart">
                     <span class="material-icons">shopping_cart</span>
                     <!-- <span class="cart-badge">2</span> -->
                 </a>
@@ -59,91 +59,78 @@
 
             <h2 class="cards-container-heading">My Cart</h2>
 
-            <div class="my-cart-product-card">
-                <div class="my-cart-product-image-div">
-                    <img src="/images/adidas-x-19.1-sg.png" alt="">
-                </div>
+            <div class="only-product-cards">
 
-                <div class="my-cart-product-description-div">
-                    <p class="my-cart-product-name">Adidas X 19.1 SG</p>
-                    <h4 class="my-cart-product-price">Rs. 3999</h4>
+                <!-- <div class="my-cart-product-card">
 
-                    <label for="size">Size:</label>
-                    <select name="size" id="size">
-                        <option value="small">S</option>
-                        <option value="medium">M</option>
-                        <option value="large">L</option>
-                        <option value="x-large">XL</option>
-                    </select>
-
-                    <div class="quantity-btns">
-                        <button class="horizontal-card-btn">+</button>
-                        <span class="quantity">0</span>
-                        <button class="horizontal-card-btn">-</button>
+                    <div class="my-cart-product-image-div">
+                        <img src="/images/adidas-x-19.1-sg.png" alt="">
                     </div>
-                </div>
 
-                <div>
-                    <h4 class="expected-delivery">Expected Delivery: Wed, 22 Oct</h4>
-                    <span class="replace-info">10 days replacement policy</span>
-                </div>
+                    <div class="my-cart-product-description-div">
+                        <p class="my-cart-product-name">Adidas X 19.1 SG</p>
+                        <h4 class="my-cart-product-price">Rs. 3999</h4>
 
-                <div class="product-card-btns-div">
-                    <button id="delete-btn"><span class="material-icons" >delete</span></button><br>
-                    <button id="move-to-wishlist-btn">MOVE TO WISHLIST</button>
-                </div>
-            </div>
+                        <label for="size">Size:</label>
+                        <select name="size" id="size">
+                            <option value="small">S</option>
+                            <option value="medium">M</option>
+                            <option value="large">L</option>
+                            <option value="x-large">XL</option>
+                        </select>
 
-
-            <div class="my-cart-product-card">
-                <div class="my-cart-product-image-div">
-                    <img src="/images/adidas-x-19.1-sg.png" alt="">
-                </div>
-
-                <div class="my-cart-product-description-div">
-                    <p class="my-cart-product-name">Adidas X 19.1 SG</p>
-                    <h4 class="my-cart-product-price">Rs. 3999</h4>
-
-                    <label for="size">Size:</label>
-                    <select name="size" id="size">
-                        <option value="small">S</option>
-                        <option value="medium">M</option>
-                        <option value="large">L</option>
-                        <option value="x-large">XL</option>
-                    </select>
-                    <div class="quantity-btns">
-                        <button class="horizontal-card-btn">+</button>
-                        <span class="quantity">0</span>
-                        <button class="horizontal-card-btn">-</button>
+                        <div class="quantity-btns">
+                            <button class="horizontal-card-btn">+</button>
+                            <span class="quantity">0</span>
+                            <button class="horizontal-card-btn">-</button>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <h4 class="expected-delivery">Expected Delivery: Wed, 22 Oct</h4>
-                    <span class="replace-info">10 days replacement policy</span>
-                </div>
+                    <div>
+                        <h4 class="expected-delivery">Expected Delivery: Wed, 22 Oct</h4>
+                        <span class="replace-info">10 days replacement policy</span>
+                    </div>
 
-                <div class="product-card-btns-div">
-                    <button id="delete-btn"><span class="material-icons" >delete</span></button><br>
-                    <button id="move-to-wishlist-btn">MOVE TO WISHLIST</button>
-                </div>
+                    <div class="product-card-btns-div">
+                        <button id="delete-btn"><span class="material-icons">delete</span></button><br>
+                        <button id="move-to-wishlist-btn">MOVE TO WISHLIST</button>
+                    </div>
+                </div> -->
             </div>
-
-            
-
 
         </div>
 
         <div class="bill-container">
 
             <h2 class="cards-container-heading">Bill Amount</h2>
+            <div class="bill-content-container">
+                <div class="info-container-div">
+                    <p class="price-info">Price:</p>
+                    <p class="discount-info">Discount:</p>
+                    <p class="delivery-charges-info">Delivery Charges:</p>
 
-            <p class="price-info">Price:</p>
-            <p class="discount-info">Discount:</p>
-            <p class="delivery-charges-info">Delivery Charges:</p>
-            <hr>
-            <p class="total">Total Amount:</p>
-            <hr>
+                </div>
+                <div class="values-container">
+                    <p class="price-info" id="price-info">0</p>
+                    <p class="discount-info" id="discount-info">0</p>
+                    <p class="delivery-charges-info" id="delivery-charges-info">0</p>
+
+                </div>
+
+            </div>
+            <div>
+                <hr>
+                <div class="total-amount-div">
+                    <p class="total">Total Amount:</p>
+                    <p class="total" id="total">0</p>
+                </div>
+                <hr>
+            </div>
+
+            <p class="disc-display"></p>
+            <div class="checkout-btn-div">
+                <button class="checkout-btn">Proceed to Checkout!</button>
+            </div>
         </div>
 
     </div>
