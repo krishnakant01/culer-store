@@ -125,10 +125,7 @@ function deleteAndCart() {
             //saving locally
             localChanges();
 
-            if (Object.keys(productsInWishlist).length === 0) {
-                localStorage.removeItem("productsInWishlist");
-                emptyCartInitializer();
-            }
+           
         });
 
     }
@@ -137,6 +134,12 @@ function deleteAndCart() {
 function localChanges() {
 
     localStorage.setItem('productsInWishlist', JSON.stringify(productsInWishlist));
+
+    if (Object.keys(productsInWishlist).length === 0) {
+        localStorage.removeItem("productsInWishlist");
+        console.log("Hi")
+        emptyCartInitializer();
+    }
 
 }
 

@@ -61,44 +61,51 @@ boots.map(boot => {
 onReloadCartBadgeNumber();
 
 // creating cart badge and updating its number, storing the items in local storage
-var btnAddToCart = document.querySelectorAll(".product-add-to-cart");
-var btnWishlist = document.querySelectorAll(".wishlist-btn");
-var wishlistBtnText = document.querySelectorAll(".wishlist");
 
-for (let i = 0; i < btnAddToCart.length; i++) {
 
-    btnAddToCart[i].addEventListener("click", () => {
+addToCartAndWishlistButtonListeners();
 
-        let storedCartNumber = localStorage.getItem('numberOfCartItems');
+function addToCartAndWishlistButtonListeners() {
 
-        if (storedCartNumber === null) {
-            storedCartNumber++;
-            createCartBadge(storedCartNumber);
+    var btnAddToCart = document.querySelectorAll(".product-add-to-cart");
+    var btnWishlist = document.querySelectorAll(".wishlist-btn");
+    var wishlistBtnText = document.querySelectorAll(".wishlist");
 
-        } else {
-            storedCartNumber++;
-            document.querySelector(".cart-badge").innerText = Number(storedCartNumber);
-        }
+    for (let i = 0; i < btnAddToCart.length; i++) {
 
-        cartBadgeNumber();
-        storeCartProducts(boots[i]);
-        totalCartCost(boots[i]);
+        btnAddToCart[i].addEventListener("click", () => {
 
-    });
-}
+            let storedCartNumber = localStorage.getItem('numberOfCartItems');
 
-for (let i = 0; i < btnWishlist.length; i++) {
+            if (storedCartNumber === null) {
+                storedCartNumber++;
+                createCartBadge(storedCartNumber);
 
-    btnWishlist[i].addEventListener("click", ()=>{
-     
-        storeWishlistProducts(boots[i], wishlistBtnText[i]);
-      //  setWishlistButtonState(boots[i]);
+            } else {
+                storedCartNumber++;
+                document.querySelector(".cart-badge").innerText = Number(storedCartNumber);
+            }
 
-    });
+            cartBadgeNumber();
+            storeCartProducts(boots[i]);
+            totalCartCost(boots[i]);
+
+        });
+    }
+
+    for (let i = 0; i < btnWishlist.length; i++) {
+
+        btnWishlist[i].addEventListener("click", () => {
+
+            storeWishlistProducts(boots[i], wishlistBtnText[i]);
+            //  setWishlistButtonState(boots[i]);
+
+        });
+    }
 }
 
 function storeWishlistProducts(product, text) {
-   
+
     let wishlistItems = localStorage.getItem('productsInWishlist');
     wishlistItems = JSON.parse(wishlistItems);
 
@@ -112,17 +119,14 @@ function storeWishlistProducts(product, text) {
             }
             wishlistItems[product.id].liked = true;
             text.innerText = "favorite";
-           // text.style.color ="red";
+            // text.style.color ="red";
 
         } else {
             wishlistItems[product.id].liked = false;
             delete wishlistItems[product.id];
             text.innerText = "favorite_border";
-            text.style.color ="black";
+            text.style.color = "black";
 
-            // if(Object.keys(wishlistItems).length == 0){
-            //     localStorage.removeItem("productsInWishlist");
-            // }
         }
     } else {
         product.liked = true;
@@ -133,30 +137,33 @@ function storeWishlistProducts(product, text) {
     }
 
     localStorage.setItem('productsInWishlist', JSON.stringify(wishlistItems));
-  
+
+    if (Object.keys(wishlistItems).length === 0) {
+        localStorage.removeItem("productsInWishlist");
+    }
+
 }
 
 //wishlist button state (liked, not liked)
 onReloadWishlistButtonState();
 
-function onReloadWishlistButtonState(){
+function onReloadWishlistButtonState() {
     var text = document.querySelectorAll(".wishlist");
     let items = localStorage.getItem('productsInWishlist');
     items = JSON.parse(items);
     var result = [];
-    for( var i in items){
+    for (var i in items) {
         result.push(items[i]);
     }
-    
-    for(let i=0; i<result.length; i++){
-       
-        if(items[result[i].id].liked == true){
+
+    for (let i = 0; i < result.length; i++) {
+
+        if (items[result[i].id].liked == true) {
             text[result[i].id].innerText = "favorite";
-           // text[result[i].id].style.color = "red";
-        }
-        else{
+            // text[result[i].id].style.color = "red";
+        } else {
             text[result[i].id].innerText = "favorite_border";
-           // text[result[i].id].style.color = "black";
+            // text[result[i].id].style.color = "black";
         }
     }
 
@@ -235,3 +242,89 @@ function totalCartCost(product) {
         localStorage.setItem("totalCartCost", product.productPrice);
     }
 }
+
+//Filter products
+var applyBtn = document.querySelector("#btn-apply");
+var clearAllBtn = document.querySelector("#btn-clear");
+var checkBoxes = [];
+checkBoxes.push(document.querySelector("#nike"));
+checkBoxes.push(document.querySelector("#adidas"));
+checkBoxes.push(document.querySelector("#puma"));
+
+
+applyBtn.addEventListener("click", () => {
+    var checkBoxState = [];
+    var formResults = [];
+
+    for (let i = 0; i < checkBoxes.length; i++) {
+
+        checkBoxState.push(checkBoxes[i].checked);
+
+        if (checkBoxes[i].checked === true) {
+            formResults.push(checkBoxes[i].value);
+        }
+    }
+
+    //saving locally
+    localStorage.setItem("checkBoxState", JSON.stringify(checkBoxState));
+
+    filterProducts(formResults);
+});
+
+clearAllBtn.addEventListener("click", () => {
+    localStorage.removeItem("checkBoxState");
+    location.reload();
+});
+
+function filterProducts(results) {
+
+    let checkedState = localStorage.getItem('checkBoxState');
+    checkedState = JSON.parse(checkedState);
+
+    var cardsContainer = document.querySelector(".cards-container");
+    cardsContainer.innerHTML = "";
+
+    for (let i = 0; i < boots.length; i++) {
+
+        for (let j = 0; j < results.length; j++) {
+
+            if (boots[i].brand === results[j]) {
+
+                cardsContainer.innerHTML += `
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${boots[i].productImage}" alt="">
+                        <button class="wishlist-btn"><span class="material-icons wishlist">favorite_border</span></button>
+                    </div>
+                    <p class="product-name">${boots[i].productName}</p>
+                    <h4 class="product-price">₹ ${boots[i].productPrice}</h4>
+
+                    <button class="product-add-to-cart">Add to Cart</button>
+                 </div>
+                
+                `
+            }
+        }
+    }
+    // onReloadCartBadgeNumber();
+    // addToCartAndWishlistButtonListeners(); //bug: wishlist and add to cart button not working after filtering
+    // onReloadWishlistButtonState();
+
+}
+
+// onReloadCheckboxState();
+
+// //maintaining the checkbox state on reload
+// function onReloadCheckboxState() {
+
+//     let checkedState = localStorage.getItem('checkBoxState');
+//     checkedState = JSON.parse(checkedState);
+
+//     if (checkedState) {
+
+//         for (let i = 0; i < 3; i++) {
+//             checkBoxes[i].checked = checkedState[i];
+//         }
+//     }
+// }

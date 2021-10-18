@@ -254,11 +254,12 @@ function setCartCost() {
     let fp = 0;
 
     discDisplay.style.display = "none";
+    deliveryCharges.style.color = "black";
     price.innerText = "₹ " + pri;
 
     if (Number(totalCost) > 30000) {
         disc = 0.1 * pri;
-        discount.innerText = "- ₹ " + disc.toFixed(2);
+        discount.innerText = "- ₹ " + disc.toFixed(1);
         discDisplay.innerText = "10% Discount applied.";
         discDisplay.style.display = "block";
     } else {
@@ -273,6 +274,6 @@ function setCartCost() {
         deliveryCharges.innerText = "+ ₹ " + delivery;
     }
 
-    fp = pri + delivery - disc.toFixed(2);
+    fp = pri + delivery - disc.toFixed(1);
     finalPrice.innerText = "₹ " + fp;
 }

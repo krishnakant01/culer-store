@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header >
+    <header>
 
         <nav class="navigation-container">
 
@@ -59,20 +59,45 @@
         </div>
     </div>
 
-    <h2 class="heading">Football Boots</h2>
+    <h1 class="heading">Football Boots</h1>
 
-    
-    <div class="cards-content-container">
+    <div class="outest-boots-div">
 
-        <div class="cards-container-heading">
-            Our Top Picks
+        <div class="filter-container">
+            <div class="cards-container-heading " style="border-radius: 0 ; font-weight: lighter;">
+                Brand
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="nike" value="nike">
+                <label for="nike">Nike</label><br>
+
+                <input type="checkbox" id="adidas" value="adidas">
+                <label for="adidas">Adidas</label><br>
+
+                <input type="checkbox" id="puma" value="puma">
+                <label for="puma">Puma</label><br>
+
+                <div style="display: flex;">
+                    <button class="checkout-btn" id="btn-apply" style="width: 60%; padding: 0.25rem;">Apply</button>
+                    <button class="explore-now-btn" id="btn-clear"
+                            style="width: 60%; padding: 0.5rem;">Clear All</button>
+                </div>
+            </div>
         </div>
 
-        <div class="cards-container">
 
-            <!-- <div class="product-card">
+        <div class="cards-content-container">
+
+            <div class="cards-container-heading">
+                Our Top Picks
+            </div>
+
+            <div class="cards-container">
+
+                <!-- <div class="product-card">
                 <div class="product-image">
                     <img src="/images/adidas-x-19.1-sg.png" alt="">
+                    <button class="wishlist-btn"><span class="material-icons wishlist">favorite_border</span></button>
                 </div>
                 <p class="product-name">Adidas X 19.1 SG</p>
                 <h4 class="product-price">Rs. 3999</h4>
@@ -82,8 +107,9 @@
                 
             </div> -->
 
-        </div>
+            </div>
 
+        </div>
     </div>
 
     <script src="boots.js" type="module"></script>
