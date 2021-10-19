@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
 </head>
 
 <body>
@@ -22,16 +23,16 @@
             <ul class="list-non-bullet nav-items-align">
 
                 <li class="list-inline">
-                    <a class="link active-link" href="/boots.html">Boots</a></li>
+                    <a class="link active-link" href="/index.html">Home</a></li>
+
+                <li class="list-inline">
+                    <a class="link " href="/boots.html">Boots</a></li>
 
                 <li class="list-inline">
                     <a class="link" href="/kits.html">Football Kits</a></li>
 
                 <li class="list-inline">
                     <a class="link" href="/keeper.html">Keeper</a></li>
-
-                <li class="list-inline">
-                    <a class="link" href="/others.html">Other Apparels</a></li>
 
             </ul>
 
@@ -43,7 +44,7 @@
                     <span class="material-icons">shopping_cart</span>
                     <!-- <span class="cart-badge">2</span> -->
                 </a>
-                <a href="/">
+                <a href="/" class="my-account">
                     <span class="material-icons">person</span>
                 </a>
             </div>
@@ -65,15 +66,15 @@
             </div>
 
             <div class="image">
-                <img src="/images/fcb-banner-one.png" alt="banner-one">
+                <img src="/images/ter-stegn-adidas.png" alt="banner-one">
             </div>
 
             <div class="image">
-                <img src="/images/ter-stegn-adidas.png" alt="adidas predator">
+                <img src="/images/fcb-banner-one.png" alt="adidas predator">
             </div>
 
             <div class="image">
-                <img src="/images/nike_mercurial.png" alt="nike mercurial">
+                <img src="/images/nike_mercurial-banner.png" alt="nike mercurial">
             </div>
 
         </div>
@@ -90,13 +91,109 @@
         <div class="single-dot"></div> -->
     </div>
 
+    <h2 class="container-heading" style="text-align: center;">Trending</h2>
 
+    <div class="outest-container">
 
+        <div class="trending-product-card">
 
+            <img class="trending-image" src="/images/trending-men-home-kit.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">FC Barcelona Men's Home Kit 2021/22 </p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+        <div class="trending-product-card">
+
+            <img class="trending-image" src="/images/trending-men-away-kit.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">FC Barcelona Men's Away Kit 2021/22 </p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+        <div class="trending-product-card">
+
+            <img class="trending-image" src="/images/trending-women-home-kit.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">FC Barcelona Women's Home Kit 2021/22 </p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+        <div class="trending-product-card">
+
+            <img class="trending-image" src="/images/trending-women-away-kit.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">FC Barcelona Women's Away Kit 2021/22 </p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <h2 class="container-heading" style="text-align: center; margin-top: 3rem;">Player Version Kits</h2>
+
+    <div class="outest-container" style="gap: 0;">
+
+        <div class="trending-product-card" style="border-radius: 0;">
+
+            <img class="trending-image" src="/images/depay.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">MEMPHIS DEPAY</p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+        <div class="trending-product-card" style="border-radius: 0;">
+
+            <img class="trending-image" src="/images/de-jong.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">FRENKIE DE JONG</p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+        <div class="trending-product-card" style="border-radius: 0;">
+
+            <img class="trending-image" src="/images/pedri.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">PEDRI</p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+        <div class="trending-product-card" style="border-radius: 0;">
+
+            <img class="trending-image" src="/images/pique.png" alt="">
+
+            <div class="trending-image-overlay">
+                <p class="trending-img-description">GERARD PIQUE</p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+
+        </div>
+
+    </div>
 
     <div class="container">
 
-        <h2 class="container-heading">What are you looking for?</h2>
+        <h2 class="container-heading" style="margin-top: 2rem;">What are you looking for?</h2>
         <button class="button" id="btn-adult-boots">Adult Boots</button>
         <button class="button" id="btn-kids-boots">Kids Boots</button>
         <button class="button" id="btn-men-kit">Men's Kit</button>
@@ -105,6 +202,25 @@
         <button class="button" id="btn-football">Footballs</button>
 
     </div>
+
+    <footer class="footer">
+        <ul class="social-links">
+            <!-- <h2 class="footer-p">Follow Barça</h2> -->
+            <li class="list-item-inline"><a href="mailto: singhkrishnakant3@gmail.com"><i
+                        class='bx bxs-envelope'></i></a>
+            </li>
+
+            <li class="list-item-inline"><a href="https://github.com/krishnakant01" target="_blank"><i
+                        class='bx bxl-github'></i></a></li>
+
+            <li class="list-item-inline"><a href="https://twitter.com/krishnakant_01" target="_blank"><i
+                        class='bx bxl-twitter'></i></a></li>
+
+            <li class="list-item-inline"><a href="https://www.linkedin.com/in/krishnakant-singh-333450193/"
+                    target="_blank"><i class='bx bxl-instagram'></i></a></li>
+        </ul>
+        <p class="footer-p">&copy; All Rights Reserved.</p>
+    </footer>
 
 
     <script src="app.js"></script>
