@@ -260,7 +260,7 @@ body {
     border-radius: 0.25rem;
     background-color:var(--color-light-blue);
     text-align: center;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     position: relative; 
 }
 
@@ -444,6 +444,14 @@ body {
     accent-color: var(--color-black);
 }
 #nike, #adidas, #puma{
+    margin-bottom: 0.75rem;
+    margin-left: 6rem;
+    cursor: pointer;
+}
+
+/*Kits Page*/
+
+#home, #away, #third{
     margin-bottom: 0.75rem;
     margin-left: 6rem;
     cursor: pointer;
